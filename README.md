@@ -1,6 +1,6 @@
 # Trie-urls-BreakingTech
 
-
+![Capture d’écran 2024-08-20 à 16 08 01](https://github.com/user-attachments/assets/a32d7bed-84c4-4adf-9aca-51fed7aed841)
 
 Cette application Python est un outil de comparaison d'URLs qui permet de traiter efficacement deux fichiers .txt contenant des listes d'URLs. Elle est particulièrement utile pour identifier les nouvelles URLs qui ne sont pas présentes dans un fichier existant.
 
