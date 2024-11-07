@@ -58,9 +58,9 @@ def analyser_et_nettoyer_fichier(fichier):
     
     try:
         with open(fichier, 'r') as f:
-            urls = f.readlines()
-        urls_nettoyees = [nettoyer_url(url.strip()) for url in urls]
-        return urls_nettoyees
+            # Lire les lignes, nettoyer les URL et ignorer les lignes vides
+            urls = [nettoyer_url(url.strip()) for url in f if url.strip()]
+        return urls
     except Exception as e:
         print(f"Une erreur s'est produite lors de la lecture du fichier '{fichier}': {e}")
         return []
@@ -101,8 +101,8 @@ def menu():
         choix = input(Colors.ORANGE + "Veuillez entrer votre choix: " + Colors.RESET)
 
         if choix == "1":
-            fichier1 = input(Colors.BLUE + "Veuillez glisser déposer ici, le fichier .txt des nouvelles urls: " + Colors.RESET)
-            fichier2 = input(Colors.BLUE + "Veuillez glisser déposer ici, le fichier .txt des urls déjà existantes: " + Colors.RESET)
+            fichier1 = input(Colors.BLUE + "Veuillez glisser déposer ici, le fichier .txt des nouvelles urls: " + Colors.RESET).rstrip()
+            fichier2 = input(Colors.BLUE + "Veuillez glisser déposer ici, le fichier .txt des urls déjà existantes: " + Colors.RESET).rstrip()
             comparer_fichiers(fichier1, fichier2)
 
         elif choix == "2":
